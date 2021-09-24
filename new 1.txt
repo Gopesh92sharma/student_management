@@ -1,0 +1,37 @@
+echo $select_query = "SELECT Password FROM `admin` WHERE Username = '$username'";
+						$select_query_run = $conn->prepare($select_query);
+						$select_query_run->execute();
+					    
+						
+						while($result = $select_query_run->fetch(PDO::FETCH_ASSOC)){
+							
+							
+							echo "insdes result";
+							echo $pass = $result['Password'];
+							echo $old;
+									
+								if($old == $pass){
+								
+								
+								
+								$update_query = "UPDATE `admin` SET `Password`='$new' WHERE Username = '$username'";
+													$update_query_run = $conn->prepare($update_query);
+													$update_query_run->execute();
+													echo "password updated";
+								}
+								else{
+									echo"one not working";
+								}
+							
+								
+							
+						}
+							
+						
+}
+
+
+
+						else{
+							echo "not working";
+						}
